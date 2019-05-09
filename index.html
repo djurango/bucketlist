@@ -6,6 +6,8 @@
     <title>bucketlist</title>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
 </head>
 <body>
@@ -14,21 +16,111 @@
             <h1>bucketlist</h1>
         </header>
 
+        <section>
+            <div class="total-tasks"><h3><span>12</span> Tasks Total</h3></div>
+            <div class="weather">
+                Zurich, partly sunny 24°
+                <img src="img/weather/partly-sunny.svg" alt="sunny">
+            </div>
+        </section>
+
         <nav>
-            <div class="total-tasks">11 Tasks Total</div>
-            <div class="add-task">add Task</div>
+            <div class="sort-by">sort by:</div>
+            <div class="btn">finish Date</div>
+            <div class="btn">created Date</div>
+            <div class="btn">importance</div>
+            <div class="btn add-task">add Task</div>
         </nav>
 
-        <section class="container">
-            <article class="task"></article>
-            <article class="task"></article>
-            <article class="task"></article>
-            <article class="task"></article>
-            <article class="task"></article>
-            <article class="task"></article>
-            <article class="task"></article>
-            <article class="task"></article>
-        </section>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="task-date">09.05.2019</div>
+                <div class="task-importance high"></div>
+                <div class="task-title"><h4>feed the dog</h4></div>
+                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, maxime.</p>
+                <div class="crud-icons">
+                    <i class="material-icons crud">check</i>
+                    <i class="material-icons crud">edit</i>
+                    <i class="material-icons crud">delete_forever</i>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="task-date">09.05.2019</div>
+                <div class="task-importance medium"></div>
+                <div class="task-title"><h4>bicycle training</h4></div>
+                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, maxime.</p>
+                <div class="crud-icons">
+                    <i class="material-icons crud">check</i>
+                    <i class="material-icons crud">edit</i>
+                    <i class="material-icons crud">delete_forever</i>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="task-date">09.05.2019</div>
+                <div class="task-importance medium"></div>
+                <div class="task-title"><h4>book flight</h4></div>
+                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, maxime.</p>
+                <div class="crud-icons">
+                    <i class="material-icons crud">check</i>
+                    <i class="material-icons crud">edit</i>
+                    <i class="material-icons crud">delete_forever</i>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="task-date">09.05.2019</div>
+                <div class="task-importance low"></div>
+                <div class="task-title"><h4>test this functions</h4></div>
+                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, maxime.</p>
+                <div class="crud-icons">
+                    <i class="material-icons crud">check</i>
+                    <i class="material-icons crud">edit</i>
+                    <i class="material-icons crud">delete_forever</i>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="task-date">09.05.2019</div>
+                <div class="task-importance high"></div>
+                <div class="task-title"><h4>push to github</h4></div>
+                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, maxime.</p>
+                <div class="crud-icons">
+                    <i class="material-icons crud">check</i>
+                    <i class="material-icons crud">edit</i>
+                    <i class="material-icons crud">delete_forever</i>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="task-date">09.05.2019</div>
+                <div class="task-importance low"></div>
+                <div class="task-title"><h4>pick-up order</h4></div>
+                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, maxime.</p>
+                <div class="crud-icons">
+                    <i class="material-icons crud">check</i>
+                    <i class="material-icons crud">edit</i>
+                    <i class="material-icons crud">delete_forever</i>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="task-date">09.05.2019</div>
+                <div class="task-importance low"></div>
+                <div class="task-title"><h4>go for a walk</h4></div>
+                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, maxime.</p>
+                <div class="crud-icons">
+                    <i class="material-icons crud">check</i>
+                    <i class="material-icons crud">edit</i>
+                    <i class="material-icons crud">delete_forever</i>
+                </div>
+            </div>
+
+
+
+        </div>
+
     </main>
 </body>
 </html>

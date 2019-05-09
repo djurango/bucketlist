@@ -10,108 +10,160 @@ body {
     -webkit-transition: border 0.2s;
     transition: border 0.2s;
     border: solid 0px #fff;
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 14px;
     background-size: 10%;
 }
 
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+header, nav, section, .grid-item {
+    background: #222B2E;
+    box-shadow: 0 10px 45px -1px rgba(0,0,0,0.5);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    padding: 20px 25px;
+    line-height: 1.5;
+}
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 header  {
-    background: #222B2E;
-    height: 200px;
-    box-shadow: 0px 10px 45px -1px rgba(0,0,0,0.5);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
- }
+    height: 100px;
+}
+
+section {
+    margin: 25px 0;
+    height: 80px;
+}
+
+nav {
+    height: 100px;
+    margin: 25px 0;
+}
 
 header h1 {
     position: relative;
     float: left;
-    top: 50%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Indie Flower', cursive;
     font-size: 50px;
-
 }
 
-nav {
-    background: #222B2E;
-    height: 100px;
-    box-shadow: 0px 10px 45px -1px rgba(0,0,0,0.5);
-    margin: 25px 0;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+.total-tasks {
+    margin-left: 15px;
+    top: 50%;
+    float: left;
+}
+.total-tasks h3 {
+    line-height: 0;
 }
 
-.add-task {
+.total-tasks h3 > span {
+    font-size: 50px;
+}
+
+.sort-by {
+    padding: 10px 0;
+}
+.btn {
     background-color: #EC3158;
     color: #fff;
     padding: 10px;
-    max-width: 100px;
     text-align: center;
-    float: right;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    border-radius: 5px;
+    border-radius: 2px;
+    float: left;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+nav.btn {
     margin-right: 20px;
 }
 
-.container {
-    display: flex;
-    font-size: 0;
-    flex-wrap:wrap;
-    margin:-10px 0 0 -10px;
+.btn.add-task {
+    float: right;
+    margin-right: 0;
 }
-.task {
-    display: inline-block;
-    background-color: #222B2E;
-    margin: 10px 0 0 10px;
-    flex-grow: 1;
-    height: 200px;
-    box-shadow: 0px 10px 45px -1px rgba(0,0,0,0.5);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 25px;
 }
+
+.weather {
+    float: right;
+}
+.weather img {
+    max-width: 50px;
+    float: right;
+    padding-top: 10px;
+}
+
+.task-importance {
+    height: 15px;
+    width: 15px;
+    float: right;
+    margin-top: 5px;
+}
+.task-importance.high {
+    background-color: #F44336;
+}
+.task-importance.medium {
+    background-color: #FFEB3B;
+}
+.task-importance.low {
+    background-color: #4CAF50;
+}
+
+.task-title h4 {
+    color: #EC3158;
+    font-size: 16px;
+    margin-top: 1px;
+}
+
+.crud-icons {
+    margin-top: 20px;
+    float: right;
+}
+
+.crud {
+    cursor: pointer;
+}
+
 
 /* media queries */
 
 /* phone portrait */
 @media only screen and (min-width: 300px) {
-    .task {
-        width: calc(100% * (1/1) - 10px - 1px);
+    .grid-container {
+        grid-template-columns: auto;
     }
 }
 
 /* phone landscape */
 @media only screen and (min-width: 480px) {
-    .task {
-        width: calc(100% * (1/1) - 10px - 1px);
+    .grid-container {
+        grid-template-columns: auto;
     }
 }
 
 /* tablet portrait */
 @media only screen and (min-width: 768px) {
-    .task {
-        width: calc(100% * (1/2) - 10px - 1px);
+    .grid-container {
+        grid-template-columns: auto auto;
     }
 }
 
 /* tablet landscape / desktop */
 @media only screen and (min-width: 1024px) {
-
-    .task {
-        width: calc(100% * (1/4) - 10px - 1px);
+    .grid-container {
+        grid-template-columns: auto auto auto auto ;
     }
 }

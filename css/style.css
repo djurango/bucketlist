@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+body {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    background: #222B2E url(../img/background.svg) fixed;
+    box-sizing: border-box;
+    -webkit-transition: border 0.2s;
+    transition: border 0.2s;
+    border: solid 0px #fff;
+    font-size: 18px;
+    line-height: 26px;
+    background-size: 20%;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+header  {
+    background: #222B2E;
+    height: 200px;
+    box-shadow: 0px 10px 45px -1px rgba(0,0,0,0.5);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+ }
+
+header h1 {
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
+
+}
+
+nav {
+    background: #222B2E;
+    height: 100px;
+    box-shadow: 0px 10px 45px -1px rgba(0,0,0,0.5);
+    margin: 25px 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.add-task {
+    background-color: #EC3158;
+    color: #fff;
+    padding: 10px;
+    max-width: 100px;
+    text-align: center;
+    float: right;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.container {
+    display: flex;
+    font-size: 0;
+    flex-wrap:wrap;
+    margin:-10px 0 0 -10px;
+}
+.task {
+    display: inline-block;
+    background-color: #222B2E;
+    margin: 10px 0 0 10px;
+    flex-grow: 1;
+    height: 200px;
+    box-shadow: 0px 10px 45px -1px rgba(0,0,0,0.5);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* media queries */
+
+/* phone portrait */
+@media only screen and (min-width: 300px) {
+    .task {
+        width: calc(100% * (1/1) - 10px - 1px);
+    }
+}
+
+/* phone landscape */
+@media only screen and (min-width: 480px) {
+    .task {
+        width: calc(100% * (1/1) - 10px - 1px);
+    }
+}
+
+/* tablet portrait */
+@media only screen and (min-width: 768px) {
+    .task {
+        width: calc(100% * (1/2) - 10px - 1px);
+    }
+}
+
+/* tablet landscape / desktop */
+@media only screen and (min-width: 1024px) {
+
+    .task {
+        width: calc(100% * (1/4) - 10px - 1px);
+    }
+}

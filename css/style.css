@@ -91,6 +91,11 @@ nav.btn {
     margin-right: 0;
 }
 
+.btn.switch {
+    float: right;
+    margin-right: 0;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;

@@ -14,6 +14,7 @@
     <main>
         <header>
             <h1>bucketlist</h1>
+            <div class="btn switch">style switch</div>
         </header>
 
         <section>
@@ -122,5 +123,18 @@
         </div>
 
     </main>
+
+
+
+<script src="js/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".btn.switch").click(function(){
+                $("body, header, nav, section, .grid-item").css("background-color", "#E0E0E0");
+                $("body").css("color", "black");
+            });
+        });
+    </script>
 </body>
 </html>

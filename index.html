@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
+
+
 </head>
 <body>
     <main>
@@ -30,7 +32,7 @@
             <div class="btn">finish Date</div>
             <div class="btn">created Date</div>
             <div class="btn">importance</div>
-            <div class="btn add-task">add Task</div>
+            <div class="btn add-task" id="opener">add Task</div>
         </nav>
 
         <div class="grid-container">
@@ -120,6 +122,38 @@
 
 
 
+            <div id="dialog" >
+                <form>
+                    <fieldset>
+                        <label for="task">Title</label><br>
+                        <input type="text" name="task" id="task" value="feed the dog"><br>
+
+
+                        <br>
+                        <label for="todo">Task</label><br>
+                        <textarea id="todo" name="todo" cols="40" rows="5"></textarea>
+
+
+                        <br><br>
+                        <label for="importance">Importance</label><br>
+                        <select id="importance">
+                            <option value="1">low</option>
+                            <option value="2">medium</option>
+                            <option value="3">high</option>
+                        </select>
+
+                        <br><br>
+
+
+                        <label for="datepicker">Due Date</label><br>
+                        <input type="text" id="datepicker">
+
+                        <br><br><br>
+                        <input type="submit">
+                    </fieldset>
+                </form>
+            </div>
+
         </div>
 
     </main>
@@ -127,14 +161,10 @@
 
 
 <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/index.js"></script>
 
     <script>
-        $(document).ready(function(){
-            $(".btn.switch").click(function(){
-                $("body, header, nav, section, .grid-item").css("background-color", "#E0E0E0");
-                $("body").css("color", "black");
-            });
-        });
     </script>
 </body>
 </html>

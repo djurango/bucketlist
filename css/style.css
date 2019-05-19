@@ -148,6 +148,25 @@ nav.btn {
     cursor: pointer;
 }
 
+fieldset {
+    background-color: #222B2E;
+    padding: 30px;
+    box-shadow: 0 10px 45px -1px rgba(0,0,0,0.5);
+}
+
+/* color change */
+
+body.active,
+header.active,
+nav.active,
+section.active,
+.grid-item.active {
+    background-color: #E0E0E0;
+}
+body.active {
+    color: #000;
+}
+
 
 /* media queries */
 

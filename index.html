@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>bucketlist</title>
-
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
-
-
 </head>
 <body>
     <main>
@@ -122,21 +117,20 @@
 
 
 
+            <!-- add task -->
             <div id="dialog" >
                 <form>
                     <fieldset>
                         <label for="task">Title</label><br>
                         <input type="text" name="task" id="task" value="feed the dog"><br>
-
-
                         <br>
                         <label for="todo">Task</label><br>
-                        <textarea id="todo" name="todo" cols="40" rows="5"></textarea>
+                        <textarea id="todo" name="todo" cols="40" rows="5">Describe your task...</textarea>
 
 
                         <br><br>
                         <label for="importance">Importance</label><br>
-                        <select id="importance">
+                        <select id="importance" name="importance">
                             <option value="1">low</option>
                             <option value="2">medium</option>
                             <option value="3">high</option>
@@ -146,7 +140,7 @@
 
 
                         <label for="datepicker">Due Date</label><br>
-                        <input type="text" id="datepicker">
+                        <input type="text" id="datepicker" name="datepicker">
 
                         <br><br><br>
                         <input type="submit">
@@ -160,11 +154,8 @@
 
 
 
-<script src="js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/index.js"></script>
-
-    <script>
-    </script>
 </body>
 </html>

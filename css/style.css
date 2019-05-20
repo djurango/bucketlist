@@ -108,6 +108,14 @@ nav.btn {
     grid-gap: 25px;
 }
 
+.grid-item {
+    transition:  300ms linear;
+}
+
+.grid-item:hover {
+    transform: scale(1.1);
+}
+
 .weather {
     float: right;
 }
@@ -162,9 +170,20 @@ nav.active,
 section.active,
 .grid-item.active {
     background-color: #E0E0E0;
+    transition: all 300ms linear
 }
 body.active {
     color: #000;
+}
+
+
+
+.ui-widget-overlay
+{
+    opacity: .50 !important; /* Make sure to change both of these, as IE only sees the second one */
+    filter: Alpha(Opacity=50) !important;
+
+    background: rgb(50, 50, 50) !important; /* This will make it darker */
 }
 
 

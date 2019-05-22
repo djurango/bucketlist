@@ -1,3 +1,5 @@
+'use strict'
+
 $(document).ready(function(){
     $(".btn.switch").click(function(){
         $("body, header, nav, section, .grid-item").toggleClass( "active" );
@@ -38,7 +40,7 @@ function savetask(e) {
         description: taskDesc,
         importance: taskImportance,
         status: taskStatus
-    }
+    };
 
     if (localStorage.getItem('tasks') == null) {
         let tasks = [];

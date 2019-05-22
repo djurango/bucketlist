@@ -14,7 +14,6 @@ body {
     background-size: 10%;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
-    -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -86,6 +85,7 @@ header h1 {
     float: left;
     margin-right: 20px;
     cursor: pointer;
+    border: 0px;
 }
 
 nav.btn {
@@ -102,7 +102,7 @@ nav.btn {
     margin-right: 0;
 }
 
-.grid-container {
+#tasksList {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 25px;
@@ -141,6 +141,19 @@ nav.btn {
     background-color: #4CAF50;
 }
 
+.status-open {
+    color: white;
+    float: right;
+    background-color: #F44336;
+    padding: 5px;
+}
+.status-closed {
+    color: white;
+    float: right;
+    background-color: limegreen;
+    padding: 5px;
+}
+
 .task-title h4 {
     color: #EC3158;
     font-size: 16px;
@@ -154,13 +167,16 @@ nav.btn {
 
 .crud {
     cursor: pointer;
+    color: white;
+    text-decoration: none;
 }
 
-fieldset {
+form {
     background-color: #222B2E;
     padding: 30px;
     box-shadow: 0 10px 45px -1px rgba(0,0,0,0.5);
 }
+
 
 /* color change */
 
@@ -177,42 +193,34 @@ body.active {
 }
 
 
-
-.ui-widget-overlay
-{
-    opacity: .50 !important; /* Make sure to change both of these, as IE only sees the second one */
-    filter: Alpha(Opacity=50) !important;
-
-    background: rgb(50, 50, 50) !important; /* This will make it darker */
-}
-
-
-/* media queries */
+/*
+ media queries
+*/
 
 /* phone portrait */
 @media only screen and (min-width: 300px) {
-    .grid-container {
+    #tasksList {
         grid-template-columns: auto;
     }
 }
 
 /* phone landscape */
 @media only screen and (min-width: 480px) {
-    .grid-container {
+    #tasksList {
         grid-template-columns: auto;
     }
 }
 
 /* tablet portrait */
 @media only screen and (min-width: 768px) {
-    .grid-container {
+    #tasksList {
         grid-template-columns: auto auto;
     }
 }
 
 /* tablet landscape / desktop */
 @media only screen and (min-width: 1024px) {
-    .grid-container {
+    #tasksList {
         grid-template-columns: auto auto auto auto ;
     }
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body onload="fetchtasks()">
     <main>
         <header>
             <h1>bucketlist</h1>
@@ -30,6 +30,7 @@
             <div class="btn add-task" id="opener">add Task</div>
         </nav>
 
+        <!--
         <div class="grid-container">
             <div class="grid-item">
                 <div class="task-date">09.05.2019</div>
@@ -42,120 +43,62 @@
                     <i class="material-icons crud">delete_forever</i>
                 </div>
             </div>
+       </div>
+       -->
 
-            <div class="grid-item">
-                <div class="task-date">09.05.2019</div>
-                <div class="task-importance medium"></div>
-                <div class="task-title"><h4>bicycle training</h4></div>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, maxime.</p>
-                <div class="crud-icons">
-                    <i class="material-icons crud">check</i>
-                    <i class="material-icons crud">edit</i>
-                    <i class="material-icons crud">delete_forever</i>
+        <div id="tasksList"></div>
+
+        <!-- add task -->
+        <div id="dialog" >
+            <form id="taskInputForm">
+                <div class="form-group">
+                    <label for="taskDescInput">Description</label><br>
+                    <input type="text" class="form-control" id="taskDescInput" placeholder="Describe the task ..." required>
                 </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="task-date">09.05.2019</div>
-                <div class="task-importance medium"></div>
-                <div class="task-title"><h4>book flight</h4></div>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, maxime.</p>
-                <div class="crud-icons">
-                    <i class="material-icons crud">check</i>
-                    <i class="material-icons crud">edit</i>
-                    <i class="material-icons crud">delete_forever</i>
+                <br>
+                <div class="form-group">
+                    <label for="taskImportanceInput">Importance</label><br>
+                    <select id="taskImportanceInput" class="form-control">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
                 </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="task-date">09.05.2019</div>
-                <div class="task-importance low"></div>
-                <div class="task-title"><h4>test this functions</h4></div>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, maxime.</p>
-                <div class="crud-icons">
-                    <i class="material-icons crud">check</i>
-                    <i class="material-icons crud">edit</i>
-                    <i class="material-icons crud">delete_forever</i>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="task-date">09.05.2019</div>
-                <div class="task-importance high"></div>
-                <div class="task-title"><h4>push to github</h4></div>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, maxime.</p>
-                <div class="crud-icons">
-                    <i class="material-icons crud">check</i>
-                    <i class="material-icons crud">edit</i>
-                    <i class="material-icons crud">delete_forever</i>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="task-date">09.05.2019</div>
-                <div class="task-importance low"></div>
-                <div class="task-title"><h4>pick-up order</h4></div>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, maxime.</p>
-                <div class="crud-icons">
-                    <i class="material-icons crud">check</i>
-                    <i class="material-icons crud">edit</i>
-                    <i class="material-icons crud">delete_forever</i>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="task-date">09.05.2019</div>
-                <div class="task-importance low"></div>
-                <div class="task-title"><h4>go for a walk</h4></div>
-                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, maxime.</p>
-                <div class="crud-icons">
-                    <i class="material-icons crud">check</i>
-                    <i class="material-icons crud">edit</i>
-                    <i class="material-icons crud">delete_forever</i>
-                </div>
-            </div>
+                <br>
 
 
-
-            <!-- add task -->
-            <div id="dialog" >
-                <form>
-                    <fieldset>
-                        <label for="task">Title</label><br>
-                        <input type="text" name="task" id="task" value="feed the dog"><br>
-                        <br>
-                        <label for="todo">Task</label><br>
-                        <textarea id="todo" name="todo" cols="40" rows="5">Describe your task...</textarea>
-
-
-                        <br><br>
-                        <label for="importance">Importance</label><br>
-                        <select id="importance" name="importance">
-                            <option value="1">low</option>
-                            <option value="2">medium</option>
-                            <option value="3">high</option>
-                        </select>
-
-                        <br><br>
-
-
-                        <label for="datepicker">Due Date</label><br>
-                        <input type="text" id="datepicker" name="datepicker">
-
-                        <br><br><br>
-                        <input type="submit">
-                    </fieldset>
-                </form>
-            </div>
-
+                <button type="submit" class="btn">Add</button>
+            </form>
         </div>
+
+
 
     </main>
 
 
 
+
+
+
+
+<!-- NEW -->
+
+    <div class="container">
+
+
+
+        <div class="col-lg-12">
+
+        </div>
+
+    </div>
+
+
+
+
     <script src="js/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/chance.min.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

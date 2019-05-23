@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
     $(".btn.switch").click(function(){
-        $("body, header, nav, section, .grid-item").toggleClass( "active" );
+        $("body, header, nav, section, .grid-item, .crud, form").toggleClass( "active" );
     });
 });
 
@@ -23,6 +23,13 @@ $( function() {
     });
 } );
 
+$( function() {
+    $( "#taskDueDateInput" ).datepicker();
+    $( "#anim" ).on( "change", function() {
+        $( "#taskDueDateInput" ).datepicker( "option", "showAnim", $( this ).val() );
+    });
+} );
+
 
 
 //
@@ -30,16 +37,21 @@ $( function() {
 document.getElementById('taskInputForm').addEventListener('submit', savetask);
 
 function savetask(e) {
-    let taskDesc = document.getElementById('taskDescInput').value;
+    let taskTitle = document.getElementById('taskTitleInput').value;
     let taskImportance = document.getElementById('taskImportanceInput').value;
     let taskId = chance.guid();
     let taskStatus = '<div class="status-open">Open</div>';
+    let taskDate = moment().format('L');
+    let taskDueDate = document.getElementById('taskDueDateInput').value;;
+
 
     let task = {
         id: taskId,
-        description: taskDesc,
+        title: taskTitle,
         importance: taskImportance,
-        status: taskStatus
+        status: taskStatus,
+        date: taskDate,
+        duedate: taskDueDate
     };
 
     if (localStorage.getItem('tasks') == null) {
@@ -95,15 +107,22 @@ function fetchtasks() {
 
     for (let i = 0; i < tasks.length; i++) {
         let id = tasks[i].id;
-        let desc = tasks[i].description;
+        let title = tasks[i].title;
         let importance = tasks[i].importance;
         let status = tasks[i].status;
+        let date = tasks[i].date;
+        let duedate = tasks[i].duedate;
 
         tasksList.innerHTML +=   '<div class="grid-item">'+
             '<div>' + status + '</div>'+
-            '<div class="task-title"><h4>' + desc + '</h4></div>'+
+            '<div class="task-title"><h4>' + title + '</h4></div>'+
             '<p>Importance: ' + importance + '</p>'+
+            '<p>Date: ' + date + '</p>'+
+            '<p>Due Date: ' + duedate + '</p>'+
+
+
             '<a href="#" onclick="setStatusClosed(\''+id+'\')" class="material-icons crud">check</a> '+
+            '<a href="#" onclick="editTask(\''+id+'\')" class="material-icons crud">edit</a> '+
             '<a href="#" onclick="deletetask(\''+id+'\')" class="material-icons crud">delete_forever</a>'+
             '</div>';
     }

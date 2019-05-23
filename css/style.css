@@ -116,6 +116,10 @@ nav.btn {
     transform: scale(1.1);
 }
 
+.grid-item p {
+    margin: 5px 0;
+}
+
 .weather {
     float: right;
 }
@@ -175,6 +179,16 @@ form {
     background-color: #222B2E;
     padding: 30px;
     box-shadow: 0 10px 45px -1px rgba(0,0,0,0.5);
+}
+
+.ui-datepicker {
+    background-color: #222B2E;
+    padding: 15px;
+    border: 1px solid black;
+    color: #fff !important;
+}
+.ui-datepicker a {
+    color: #fff;
 }
 
 

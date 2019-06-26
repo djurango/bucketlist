@@ -41,9 +41,6 @@ Note.edit2 = function(noteId){
     Note.open();
 };
 
-
-
-
 Note.edit = function(noteId){
 
     let note= index = NoteList.list[NoteList.getNodeIndexById(noteId)];

@@ -6,7 +6,6 @@ Storage.getList = function(){
         console.log("localStorage.notelist is empty");
         return [];
     }
-    //console.log("localStorage is not empty");
     return JSON.parse(localStorage.getItem('notelist')).notelist;
 };
 

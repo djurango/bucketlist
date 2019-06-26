@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Overview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="plugins/jqueryui/jquery-ui.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script type="text/javascript" src="plugins/jquery.min.js"></script>
+    <script type="text/javascript" src="plugins/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="plugins/momentjs/moment.min.js"></script>
+    <script type="text/javascript" src="plugins/handlebars.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script id='noteListTemplateText' type='text/x-handlebars-template'>
+        <ul id="noteList">
+            {{#each this}}
+                <li id="noteId_{{ id }}" class="grid-item">
+
+                    <input class="checkbox-container" title="done" type="checkbox" data-finished="{{ isFinished }}" name="nDone">
+
+                    <div class="noteContainer">
+                        <div class="nContentContainer">
+                            <div class="nTitle">{{ title }}</div>
+                            <div class="nContent">{{ content }}</div>
+                        </div>
+                        <div class="noteInfoContainer">
+                            <div class="nImportance"> {{ importance }}</div><span class="stars">{{ importance }}</span>
+                            <div class="nDate">Due Date: {{ date }}</div>
+                        </div>
+                        <div class="noteAdminContainer">
+                            <div class="nId">{{ id }}</div>
+                            <div class="nIsFinished">{{ isFinished }}</div>
+                        </div>
+                        <div class="editButtonContainer">
+                            <div onclick="Note.edit({{ id }});return false;"><i class="material-icons crud">edit</i></div>
+                            <div onclick="NoteList.deleteNote({{ id }});return false;"><i class="material-icons crud">delete_forever</i></div>
+                        </div>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </script>
+</head>
+<body>
+<div id="mainContent">
+    <header>
+        <h1>bucketlist</h1>
+        <button id="switchStyle">style switcher</button>
+    </header>
+
+    <section class="controlling">
+        <label for="sortBy">sort by</label><br>
+        <select id="sortBy">
+            <option value="date">due date</option>
+            <option value="creationDate">creation date</option>
+            <option value="importance">importance</option>
+        </select>
+
+        <button id="createNote">add task</button>
+        <button id="switchFinished">show finished</button>
+
+
+
+
+
+
+    </section>
+</div>
+
+<div id="createNoteDialogContainer">
+    <form id="noteForm" name="noteForm">
+        <label for="title">Title*</label>
+        <input id="title" type="text" name="title" value="" required="required" autocomplete="off"/>
+
+        <label for="content">Description*</label>
+        <textarea id="content" name="content" required="required"></textarea>
+
+        <fieldset id="importanceInput">
+            <legend>Importance</legend>
+            <label data-importance="0" for="radio-1">low</label>
+            <input type="radio" name="radio-1" checked id="radio-1">
+            <label data-importance="1" for="radio-2">medium</label>
+            <input type="radio" name="radio-1" id="radio-2">
+            <label data-importance="2" for="radio-3">high</label>
+            <input type="radio" name="radio-1" id="radio-3">
+        </fieldset>
+
+        <label for="datepicker">Due Date</label>
+        <input type="text" id="datepicker" required="required" autocomplete="off">
+
+        <button id="createNodeSubmit" type="submit">Save</button>
+        <button id="createNoteCancel" class="cancel">Cancel</button>
+    </form>
+
+</div>
+<div id="deleteDialog">delete?</div>
+<div id="data"></div>
+</body>
+</html>

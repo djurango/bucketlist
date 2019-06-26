@@ -110,6 +110,7 @@ button {
 .nTitle {
     color: #EC3158;
     font-size: 20px;
+    max-width: 140px;
 }
 
 .noteInfoContainer {

@@ -1,7 +1,7 @@
 window['DatabaseStorage'] = {
 };
 
-DatabaseStorage.SERVER = '/store';
+DatabaseStorage.SERVER = 'http://127.0.0.1:1337';
 
 DatabaseStorage.getList = function(){
 
@@ -18,7 +18,7 @@ DatabaseStorage.getList = function(){
 DatabaseStorage.storeList = function(notelist){
 
     $.ajax({
-        url: DatabaseStorage.SERVER+'/store',
+        url: '/store',
         type:'POST',
         data: JSON.stringify(notelist),
         contentType: 'application/json; charset=utf-8',

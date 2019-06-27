@@ -119,6 +119,10 @@ select {
     max-width: 140px;
 }
 
+.nContent {
+    max-width: 140px;
+}
+
 .noteInfoContainer {
     margin-bottom: 10px;
 }

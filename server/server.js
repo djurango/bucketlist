@@ -15,8 +15,8 @@ app.use(function(req, res, next) {
 app.use(require('./routes/routes.js'));
 app.use(express.static('src'));
 
-const hostname = '127.0.0.1';
-const port = process.env.PORT || 1337;
+var port = process.env.PORT || 1337;
+app.listen(port, "0.0.0.0", function() {
+  console.log("Listening on Port 1337");
+});
 
-app.listen(port, hostname);
-console.log('you can find the app here: http://' + hostname + ':' + port);

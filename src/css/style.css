@@ -66,7 +66,13 @@ button {
     float: right;
 }
 
-
+select {
+    height: 36px;
+    background-color: #EC3158;
+    color: #fff;
+    border: 0;
+    border-radius: 2px
+}
 
 
 

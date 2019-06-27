@@ -16,7 +16,11 @@ app.use(require('./routes/routes.js'));
 app.use(express.static('src'));
 
 var port = process.env.PORT || 1337;
+var localhost = '127.0.0.1';
+
+
 app.listen(port, "0.0.0.0", function() {
-  console.log("Listening on Port 1337");
+  console.log('you can find the app here: http://' + localhost + ':' + port);
 });
+
 
